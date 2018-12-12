@@ -1,0 +1,13 @@
+<?php 
+$sql = "SELECT id, username, password FROM ";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> id: ". $row["id"]. " - UserName: ". $row["username"]. " - score:". $row["score"]. """<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?> 
